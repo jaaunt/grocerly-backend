@@ -19,11 +19,13 @@ public class UsersService {
 
     private final UsersRepository usersRepository;
 
-    public UsersResponseDto getUsers(Integer id){
-        Users users = usersRepository.findById(id).get();
+    public UsersResponseDto getUsers(Integer id) {
+        Users users = usersRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
         return usersMapper.mapToDto(users);
     }
 
+    // all users temp vaate jaoks
     public List<UsersResponseDto> getAllUsers() {
         return usersRepository.findAll()
                 .stream()

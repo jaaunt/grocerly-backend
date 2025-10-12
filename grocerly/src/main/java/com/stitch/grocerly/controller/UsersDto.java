@@ -12,4 +12,6 @@ public class UsersDto {
     private String password;
     private String phone;
 
+    // registration jaoks, dto koikide kasutaja andmete jaoks
+
 }

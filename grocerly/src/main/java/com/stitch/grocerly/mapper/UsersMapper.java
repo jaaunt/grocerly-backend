@@ -11,5 +11,6 @@ public interface UsersMapper {
 
     @Mapping(source = "id", target = "userId")
     @Mapping(source = "first_name", target = "firstName")
+    @Mapping(source = "last_name", target = "lastName")
     UsersResponseDto mapToDto(Users users);
 }

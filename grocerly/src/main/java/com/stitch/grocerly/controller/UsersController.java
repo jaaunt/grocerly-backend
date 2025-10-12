@@ -15,12 +15,13 @@ public class UsersController {
     private final UsersService usersService;
 
     @GetMapping("users/{id}")  // http://localhost:8080/api/users/id
-    public UsersResponseDto users(@PathVariable Integer id) {
-        return usersService.getUsers(id);
+    public UsersResponseDto getUser(@PathVariable Integer id) {
+        return usersService.getUsers(id);  // kui returnib on 200 ok
     }
 
-    @GetMapping("/all-users") // http://localhost:8080/api/users
+    // all users temp vaate jaoks
+    @GetMapping("/all-users") // http://localhost:8080/api/all-users
     public List<UsersResponseDto> getAllUsers() {
-        return usersService.getAllUsers();
+        return usersService.getAllUsers();   // kui returnib on 200 ok
     }
 }
