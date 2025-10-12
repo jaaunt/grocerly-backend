@@ -10,5 +10,5 @@ public class UsersResponseDto {
     private String username;
     private String phone;
 
-    // all users list jaoks
+    // all users list jaoks, profiili jaoks
 }

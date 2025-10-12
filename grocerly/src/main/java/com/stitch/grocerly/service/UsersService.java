@@ -25,6 +25,7 @@ public class UsersService {
         return usersMapper.mapToDto(users);
     }
 
+    // all users temp vaate jaoks
     public List<UsersResponseDto> getAllUsers() {
         return usersRepository.findAll()
                 .stream()
