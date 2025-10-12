@@ -26,11 +26,14 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok:'
-	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.liquibase:liquibase-core'
 
+	compileOnly 'org.projectlombok:lombok:1.18.34' // lombok
+	implementation "org.mapstruct:mapstruct:1.5.5.Final" // mapstruct
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok:1.18.34'  // lombok
+	annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final" // mapstruct
 }
 
 tasks.named('test') {
