@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+    <changeSet id="2025-11-22-create-brand-table" author="Kristin Vares">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists schemaName="public" tableName="brand"/>
+            </not>
+        </preConditions>
+        <createTable tableName="brand">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="brand_name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="brand_description" type="text"/>
+            <column name="brand_logo" type="text"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

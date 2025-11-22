@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="2025-11-22-cleanup-tables" author="Kristin Vares">
+        <!-- Kustutab brand_description veeru brand tabelist -->
+        <dropColumn tableName="brand" columnName="brand_description"/>
+
+        <!-- Kustutab brand_logo veeru brand tabelist -->
+        <dropColumn tableName="brand" columnName="brand_logo"/>
+
+        <!-- Kustutab image_filename veeru product tabelist -->
+        <dropColumn tableName="product" columnName="image_filename"/>
+    </changeSet>
+
+</databaseChangeLog>

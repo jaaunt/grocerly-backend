@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="2025-11-22-link-product-to-brand" author="Kristin Vares">
+
+        <!-- Lisa brand_id veerg product tabelisse -->
+        <addColumn tableName="product">
+            <column name="brand_id" type="integer"/>
+        </addColumn>
+
+        <!-- Lisa image_filename veerg -->
+        <addColumn tableName="product">
+            <column name="image_filename" type="text"/>
+        </addColumn>
+
+        <!-- Loo foreign key seos brand tabeliga -->
+        <!-- fk = Foreign Key (võõrvõti) - loob seose product ja brand tabelite vahel -->
+        <!-- SET NULL selgitus -> Kui bränd kustutatakse, tooted jäävad alles, aga brand_id = NULL -->
+        <!-- CASCADE selgitus -> Kui brändi id muutub, uuendatakse automaatselt kõik seotud tooted -->
+        <addForeignKeyConstraint
+                baseTableName="product"
+                baseColumnNames="brand_id"
+                constraintName="fk_product_brand"
+                referencedTableName="brand"
+                referencedColumnNames="id"
+                onDelete="SET NULL"
+                onUpdate="CASCADE"/>
+
+    </changeSet>
+
+</databaseChangeLog>
