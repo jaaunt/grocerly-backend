@@ -10,6 +10,6 @@
     <include file="/db/changelog/003-initial-schema.xml"/>
     <include file="/db/changelog/004-initial-schema.xml"/>
     <include file="/db/changelog/005-initial-schema.xml"/>
-
+    <include file="/db/changelog/006-initial-schema.xml"/>
 
 </databaseChangeLog>

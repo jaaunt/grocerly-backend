@@ -14,7 +14,7 @@ public class UsersController {
 
     private final UsersService usersService;
 
-    @GetMapping("users/{id}")  // http://localhost:8080/api/users/id
+    @GetMapping("/users/{id}")  // http://localhost:8080/api/users/id
     public UsersResponseDto getUser(@PathVariable Integer id) {
         return usersService.getUsers(id);  // kui returnib on 200 ok
     }
