@@ -7,6 +7,7 @@ import com.stitch.grocerly.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -19,16 +20,23 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public OrderEntity createOrder(OrderDto orderDto) {
+    public OrderDto createOrder(OrderDto orderDto) {
         OrderEntity order = orderMapper.toEntity(orderDto);
-        return orderRepository.save(order);
+        OrderEntity saved = orderRepository.save(order);
+        return orderMapper.toDto(saved);
     }
 
-    public List<OrderEntity> getAllOrders() {
-        return orderRepository.findAll();
+    public List<OrderDto> getAllOrders() {
+        return orderRepository.findAll()
+                .stream()
+                .map(orderMapper::toDto)
+                .collect(Collectors.toList());
     }
 
-    public List<OrderEntity> getOrdersByUserId(Long userId) {
-        return orderRepository.findByUserId(userId);
+    public List<OrderDto> getOrdersByUserId(Long userId) {
+        return orderRepository.findByUserId(userId)
+                .stream()
+                .map(orderMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
