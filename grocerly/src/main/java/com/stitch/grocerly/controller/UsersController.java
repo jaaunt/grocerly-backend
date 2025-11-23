@@ -24,4 +24,11 @@ public class UsersController {
     public List<UsersResponseDto> getAllUsers() {
         return usersService.getAllUsers();   // kui returnib on 200 ok
     }
+
+    // PUT /api/users/{id} - Uuendab konkreetse kasutaja andmeid
+    // Kasutatakse profiili muutmise funktsionaalsuse jaoks
+    @PutMapping("/users/{id}")   // Kristini lisatud
+    public UsersResponseDto updateUser(@PathVariable Integer id, @RequestBody UsersDto usersDto) {
+        return usersService.updateUser(id, usersDto);
+    }
 }
