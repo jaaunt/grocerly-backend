@@ -9,6 +9,7 @@ public class UsersResponseDto {
     private String lastName;
     private String username;
     private String phone;
+    private String email;
 
     // all users list jaoks, profiili jaoks
 }

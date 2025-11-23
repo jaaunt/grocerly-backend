@@ -9,6 +9,6 @@ public class ProductResponseDto {
     private String productDescription;
     private String price;
     private String productQuantity;
-
+    private Integer brandId;
 
 }
