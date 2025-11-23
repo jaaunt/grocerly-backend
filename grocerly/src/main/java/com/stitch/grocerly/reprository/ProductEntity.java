@@ -1,8 +1,6 @@
 package com.stitch.grocerly.reprository;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,4 +18,8 @@ public class ProductEntity {
     private Float price;
 
     private Integer product_quantity;
+
+    @ManyToOne // Tähendab, et mitu produkti võib kuuluda ühele brandile
+    @JoinColumn(name = "brand_id") // Andmebaasis on product tabelis väli nimega brand_id
+    private BrandEntity brand;
 }

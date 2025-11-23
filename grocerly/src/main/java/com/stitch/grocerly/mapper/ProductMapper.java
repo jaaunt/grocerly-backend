@@ -19,6 +19,7 @@ public interface ProductMapper {
     @Mapping(source = "product_description", target = "productDescription")
     @Mapping(source = "price", target = "price")
     @Mapping(source = "product_quantity", target = "productQuantity")
+    @Mapping(source = "brand.id", target = "brandId") // võtab ProductEntity-st brand objekti ja sealt id
 
     ProductResponseDto mapToDto(ProductEntity productEntity);
 
@@ -28,6 +29,7 @@ public interface ProductMapper {
     @Mapping(source = "productDescription", target = "product_description")
     @Mapping(source = "price",              target = "price")
     @Mapping(source = "productQuantity",    target = "product_quantity")
+    @Mapping(source = "brandId", target = "brand.id") // Paneb brandId ProductEntity brand objekti sisse
     ProductEntity mapToEntity(ProductDto dto);
 
 }
