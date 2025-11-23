@@ -1,5 +1,9 @@
 # ITI0302-2025-backend
 
+# Projekti kirjeldus / eesmark
+
+Tegemist on klassikalise toidu tellimus teenusega. Leht voimaldab klientidel valida tooteid ja lisada neid oma ostukorvi et siis neid koju tellida. Tegemist pole valmis soogi tellimis lehega vaid poest toodete tellimisega.(nagu barbora)
+
 ## Kuidas runnida
 
 Koigepealt runni back siis front nagu ikka.
@@ -12,11 +16,16 @@ Koigepealt runni back siis front nagu ikka.
 
 ### 1. Runni dokkerit
 
-docker-compose up -d. Kui at any point edaspidi pakub connect database all paremmal aares **KINDLASTI VAJUTA SEDA.**
+Tee lahti oma arvutis dokker desktop(hetkel pole repo sees uhendatud veel)
+
+docker-compose up -d terminalis oma ides
+
+Andmebaasiga uhendamiseks voi kui muul ajal kusib useri ja passwordi siis need leiab docker-compose.yml failis asukoht ITI0302-2025-BACKEND -> docker-compose.yml
+Andmebaasiga uhendamiseks on paremal pool database nupp seda vajutades tuleb lahti aken vajuta + marki sealt alt leia postgres ja logi sisse. Kasutaja ja parooli leiad docker-compose.yml seest.
 
 ### 2. Buildimine
 
-Projekti avamisel peab esmalt gradel buildima. Selle leiad gradle menust Grocerly -> Tasks -> build -> build. 
+Projekti avamisel peab esmalt gradel buildima. Gradel nupp paremal. Siis gradle menust grocerly -> Tasks -> build -> build. 
 
 ### 3.Runni applicationit
 
@@ -55,7 +64,12 @@ Kui see ei ole runnable openi grocerly moodul teises aknas ja runnis seal seda. 
 
 Eks nad koik vast tootavad.
 
+# Tehnoloogiad
+
+- Spring boot
+- Vue
+- PostgreSQL
 
 # Additional notes
 
-Andmebaas on algul tuhi mistottu on all users ja product view tuhjad. Producte peab lisama intellij backendist andmebaasi ise juurde lisama. Usereid saad juurde lisada registreerimis viewst. See lisab userid ise andmebaasi.
+Andmebaas on algul tuhi mistottu on all users, orders, brands ja product tabelid tuhjad. Producte ja brande peab lisama intellij backendist andmebaasi ise juurde lisama. Usereid saad juurde lisada registreerimis viewst. See lisab userid ise andmebaasi. Ordereid saab samamoodi ise teha ostukorvi vaatest.
