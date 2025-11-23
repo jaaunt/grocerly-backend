@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 @Entity
 @Getter @Setter
 public class OrderEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

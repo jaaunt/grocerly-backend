@@ -5,11 +5,7 @@ import com.stitch.grocerly.controller.ProductResponseDto;
 import com.stitch.grocerly.reprository.ProductEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 import org.mapstruct.ReportingPolicy;
-import org.mapstruct.*;
-
-//import org.springframework.web.bind.annotation.Mapping;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface ProductMapper {

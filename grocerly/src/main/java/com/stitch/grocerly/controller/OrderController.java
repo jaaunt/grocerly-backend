@@ -1,6 +1,5 @@
 package com.stitch.grocerly.controller;
 
-import com.stitch.grocerly.repository.OrderEntity;
 import com.stitch.grocerly.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,18 +17,18 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<OrderEntity> createOrder(@RequestBody OrderDto orderDto) {
-        OrderEntity order = orderService.createOrder(orderDto);
-        return ResponseEntity.ok(order);
+    public ResponseEntity<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
+        return ResponseEntity.ok(orderService.createOrder(orderDto));
     }
 
     @GetMapping
-    public ResponseEntity<List<OrderEntity>> getAllOrders() {
+    public ResponseEntity<List<OrderDto>> getAllOrders() {
         return ResponseEntity.ok(orderService.getAllOrders());
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<OrderEntity>> getOrdersByUser(@PathVariable Long userId) {
+    public ResponseEntity<List<OrderDto>> getOrdersByUser(@PathVariable Long userId) {
         return ResponseEntity.ok(orderService.getOrdersByUserId(userId));
     }
+
 }

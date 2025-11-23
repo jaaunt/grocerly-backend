@@ -19,16 +19,24 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public OrderEntity createOrder(OrderDto orderDto) {
+    public OrderDto createOrder(OrderDto orderDto) {
         OrderEntity order = orderMapper.toEntity(orderDto);
-        return orderRepository.save(order);
+        OrderEntity saved = orderRepository.save(order);
+        return orderMapper.toDto(saved);
     }
 
-    public List<OrderEntity> getAllOrders() {
-        return orderRepository.findAll();
-    }
+    public List<OrderDto> getAllOrders() {
+        return orderRepository.findAll()
+                .stream()
+                .map(orderMapper::toDto)
+                .toList();
+    }  // admin saab koiki ordereid naha tulevikus
 
-    public List<OrderEntity> getOrdersByUserId(Long userId) {
-        return orderRepository.findByUserId(userId);
-    }
+    public List<OrderDto> getOrdersByUserId(Long userId) {
+        return orderRepository.findByUserId(userId)
+                .stream()
+                .map(orderMapper::toDto)
+                .toList();
+    }  // minu orderite jaoks profiili alla tulevikus
+
 }

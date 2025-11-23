@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class UsersService {
 
     private final UsersMapper usersMapper;
-
     private final UsersRepository usersRepository;
 
     public UsersResponseDto getUsers(Integer id) {
@@ -31,7 +30,7 @@ public class UsersService {
         return usersRepository.findAll()
                 .stream()
                 .map(usersMapper::mapToDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     // Kasutaja andmete uuendamine (eesnimi, perekonnanimi, email, telefon)
