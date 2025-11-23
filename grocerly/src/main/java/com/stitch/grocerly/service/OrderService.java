@@ -7,7 +7,6 @@ import com.stitch.grocerly.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -30,14 +29,14 @@ public class OrderService {
         return orderRepository.findAll()
                 .stream()
                 .map(orderMapper::toDto)
-                .collect(Collectors.toList());
-    }
+                .toList();
+    }  // admin saab koiki ordereid naha tulevikus
 
     public List<OrderDto> getOrdersByUserId(Long userId) {
         return orderRepository.findByUserId(userId)
                 .stream()
                 .map(orderMapper::toDto)
-                .collect(Collectors.toList());
-    }
+                .toList();
+    }  // minu orderite jaoks profiili alla tulevikus
 
 }
