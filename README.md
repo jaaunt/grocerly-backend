@@ -11,9 +11,9 @@ selle jaoks on eeldus et sul on serveriga tootav ssh voti voi keegi paneb sinu e
 
 ### 2.1 Serveri kaivitamine
 
-Runni windows powershellis voi mingis muus terminalis kasku ssh -i ubuntu@193.40.157.76.
+- Runni windows powershellis voi mingis muus terminalis kasku ssh -i ubuntu@193.40.157.76.
 
-Kui see kohe ei toota voib vaja minna et viitaksid oma ssh votmele ssh -i ~/.ssh/"sinu_ssh_votme_nimi" ubuntu@193.40.157.76.
+- Kui see kohe ei toota voib vaja minna et viitaksid oma ssh votmele ssh -i ~/.ssh/"sinu_ssh_votme_nimi" ubuntu@193.40.157.76.
 
 Kui sa ei saa oma ssh votmega nii ligipaasu siis arvatavasti pole su ssh votit serverisse pannud. Vota uhendust kellegiga kes saaks sinu votit kas sinna lisada voi sinu eest seda runnida.
 
@@ -21,7 +21,7 @@ Kui so oled too lopetanud siis serverist saab valja kasuga exit.
 
 ### 2.2 Kuidas backendi serveris runnida
 
-Runni nuud serveri sees kasku java -jar ~/backend/grocerly-0.0.1-SNAPSHOT.jar
+- Runni nuud serveri sees kasku java -jar ~/backend/grocerly-0.0.1-SNAPSHOT.jar
 
 See runnib backendi jar faili. Oota kuni see lopetab enne kui jatkad. Ara akent ega protsessi lopeta enne kui oled veebilehega too lopetanud.
 
@@ -29,7 +29,7 @@ Backendi processi saab lopetada vajutades ctrl + c
 
 ### 2.3 Mine lingile
 
-Pane oma lemmik browseri search bari http://193.40.157.76
+- Pane oma lemmik browseri search bari http://193.40.157.76
 
 Voi vajuta ulal olevale lingile
 
@@ -53,11 +53,11 @@ Kui see pakub sulle backendi juures load gradle script parast kloonimist tee sed
 
 ### 3.1.1 Runni dokkerit
 
-Tee lahti oma arvutis dokker desktop
+1. Tee lahti oma arvutis dokker desktop
 
-Tee oma IDE TERMINALIS docker-compose up -d
+2. Tee oma IDE TERMINALIS docker-compose up -d
 
-Andmebaasiga uhendamiseks kui sa varem pole on vaja votta paremalt datavase vaatest(kolme kihiline silindri nupp) pluss. Vali sealt alt postgrSQL seal on sul vaja userit ja passwordi need leiad sa docker-compose.yml failist.
+3. Andmebaasiga uhendamiseks kui sa varem pole on vaja votta paremalt datavase vaatest(kolme kihiline silindri nupp) pluss. Vali sealt alt postgrSQL seal on sul vaja userit ja passwordi need leiad sa docker-compose.yml failist.
 
 Dockeri saab kinni panna kasuga IDE TERMINALIS docker compose down
 
@@ -75,17 +75,17 @@ Runni grocerly applicationi selle leiad siit alt -> iti0302-2025-backend -> groc
 
 - Koigepealt vota grocerly path selles projektis. Mul oli see nt C:\Users\abc\IdeaProjects\iti0302-2025-frontend\grocerly sul peaks olema midagi sarnast.
 
-- Pane see path intellij terminali nii: cd sinu path
+- Pane see path intellij terminali nii: cd sinu_path
 
 - mul oli see naiteks nii: cd C:\Users\abc\IdeaProjects\iti0302-2025-frontend\grocerly
 
 ### 3.2.2 Installid
 
-- Pane terminali nuud: npm install axios
+1. Pane terminali nuud: npm install axios
 
-- Pane terminali nuud: npm install pinia
+2. Pane terminali nuud: npm install pinia
 
-- Pane terminali nuud: npm install
+3. Pane terminali nuud: npm install
 
 ### 3.2.3 Runni
 
