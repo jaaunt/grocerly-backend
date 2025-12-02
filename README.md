@@ -4,6 +4,8 @@
 
 Tegemist on klassikalise toidu tellimus teenusega. Leht voimaldab klientidel valida tooteid ja lisada neid oma ostukorvi et siis neid koju tellida. Tegemist pole valmis soogi tellimis lehega vaid poest toodete tellimisega.(nagu barbora)
 
+Leht on loodud aine ITI0302 raames aastal 2025 Taltechis. Tegemist pole paris tellimis lehega, turvalisuse huvides palume paris isikuandmeid lehele mitte sisestada.
+
 # Kuidas runnida - *server*
 selle jaoks on eeldus et sul on serveriga tootav ssh voti voi keegi paneb sinu eest serveri runnima
 
@@ -118,3 +120,7 @@ Seda saab teha gradle aknast grocerly -> tasks -> build -> bootJar
 - PostgreSQL 16
 - Docker Desktop (optional, for containerized setup)
 - Git
+
+# Autorid
+
+Janne-Lii Aun-Trepp ja Kristin Vares
