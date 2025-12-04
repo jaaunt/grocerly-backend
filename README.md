@@ -11,31 +11,50 @@ selle jaoks on eeldus et sul on serveriga tootav ssh voti voi keegi paneb sinu e
 
 ### 2.1 Serveri kaivitamine
 
-- Runni windows powershellis voi mingis muus terminalis kasku ssh -i ubuntu@193.40.157.76.
+- Runni windows powershellis voi mingis muus terminalis kasku ssh -i C:\Users\krist\.ssh\gitlab_ci_deploy_key -L 5434:127.0.0.1:5432 ubuntu@193.40.157.76  -> tänu sellele commandile on hetkel ajutine ühendus sinu arvuti ja serveri vahel
 
 - Kui see kohe ei toota voib vaja minna et viitaksid oma ssh votmele ssh -i ~/.ssh/"sinu_ssh_votme_nimi" ubuntu@193.40.157.76.
 
-Kui sa ei saa oma ssh votmega nii ligipaasu siis arvatavasti pole su ssh votit serverisse pannud. Vota uhendust kellegiga kes saaks sinu votit kas sinna lisada voi sinu eest seda runnida.
+Kui sa ei saa oma ssh votmega nii ligipaasu siis arvatavasti pole sul ssh votit serverisse pannud. Vota uhendust kellegiga kes saaks sinu votit kas sinna lisada voi sinu eest seda runnida.
 
 Kui so oled too lopetanud siis serverist saab valja kasuga exit.
 
-### 2.2 Kuidas backendi serveris runnida
+### 2.2 Jargmine samm
 
-- Runni nuud serveri sees kasku java -jar ~/backend/grocerly-0.0.1-SNAPSHOT.jar
+- Nüüd, kui oled serverisse sisse loginud mine cd /opt/veeb kausta ja pane järgnevad käsklused:
 
-See runnib backendi jar faili. Oota kuni see lopetab enne kui jatkad. Ara akent ega protsessi lopeta enne kui oled veebilehega too lopetanud.
+- sudo pkill -f grocerly -> peatab grocerly protsessid
+- sudo systemctl stop postgresql -> peatab PostgreSQL teenuse
+- sudo docker-compose up -d -> käivitab Docker konteinerid
 
-Backendi processi saab lopetada vajutades ctrl + c
+Nüüd teoorias, sa peaksid saama ühendust andmebaasiga läbi IntelliJi
 
-### 2.3 Mine lingile
+### 2.3 Jargmine samm
 
-- Pane oma lemmik browseri search bari http://193.40.157.76
+- Pane grocelyApplication Intellijsist punasest nupust kinni kui jookseb
 
-Voi vajuta ulal olevale lingile
+- Nüüd klikka Intellijsis sealt paremalt poolt "Database"
 
-### 2.4 Additional notes
+- Vajuta Database ikoonil "+" märki seejärel vali data source -> PostgreSQL
 
-Hetkel on products anmebaas tuhi (meil tekkis probleem localist andemte andmebaasi lisamisega) seega avaleht on hetkeseisuga tuhi kahjuks. Sellega tegeletakse. Userite tegemine ja login on korras.
+Täida väljad: 
+-  Host: localhost
+- Port: 5434
+- User: postgres
+- database: postgres
+- Password: Sn1tchesG4tSt1tches
+
+
+See loob ajutise tunneli sinu arvuti ja serveri vahel portil 5434 (sinu arvutis) ja serveris 5432. Nüüd iga kord kui sa hakkad Intellijsis seda serveri andbebaasi vaatama, sa pead enne jooksutama seda commandi -> ssh -i C:\Users\krist\.ssh\gitlab_ci_deploy_key -L 5434:127.0.0.1:5432 ubuntu@193.40.157.76   ja hoidma terminal lahti. 
+
+
+- Nüüd kui testida ja klikata "test connections" peaks tulema märge, et succeeded vajuta seejärel OK
+
+- Intellijsis vali paremalt uuesti database, vajuta refreshi nuppu. Seejärel otsi ülesse postgres@localhost[2] <- minul oli see nii. Tee parem klikk ja vaata üle kas port on 5434, kui on siis korras ja oled õiges kohas. 
+
+- Klikka product ja brand tabelil, lisa manuaalselt andmed ja kindlasti submiti andmed
+
+- Ava link http://193.40.157.76 . Peaksid nägema nüüd, et andmed jõudsid kohale
 
 
 # 3. Kuidas runnida - *local*
