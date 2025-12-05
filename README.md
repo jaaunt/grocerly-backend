@@ -11,21 +11,6 @@ selle jaoks on eeldus et sul on serveriga tootav ssh voti voi keegi paneb sinu e
 
 ### 2.1 Serveri kaivitamine
 
-- Runni windows powershellis voi mingis muus terminalis kasku ssh -i C:\Users\krist\.ssh\gitlab_ci_deploy_key -L 5434:127.0.0.1:5432 ubuntu@193.40.157.76  -> tänu sellele commandile on hetkel ajutine ühendus sinu arvuti ja serveri vahel
-
-- Kui see kohe ei toota voib vaja minna et viitaksid oma ssh votmele ssh -i ~/.ssh/"sinu_ssh_votme_nimi" ubuntu@193.40.157.76.
-
-Kui sa ei saa oma ssh votmega nii ligipaasu siis arvatavasti pole sul ssh votit serverisse pannud. Vota uhendust kellegiga kes saaks sinu votit kas sinna lisada voi sinu eest seda runnida.
-
-Kui so oled too lopetanud siis serverist saab valja kasuga exit.
-
-### 2.2 Jargmine samm
-
-- Nüüd, kui oled serverisse sisse loginud mine cd /opt/veeb kausta ja pane järgnevad käsklused:
-
-- sudo pkill -f grocerly -> peatab grocerly protsessid
-- sudo systemctl stop postgresql -> peatab PostgreSQL teenuse
-- sudo docker-compose up -d -> käivitab Docker konteinerid
 
 - Ava link http://193.40.157.76 . Peaksid nägema nüüd, et andmed jõudsid kohale
 
