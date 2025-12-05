@@ -27,34 +27,9 @@ Kui so oled too lopetanud siis serverist saab valja kasuga exit.
 - sudo systemctl stop postgresql -> peatab PostgreSQL teenuse
 - sudo docker-compose up -d -> käivitab Docker konteinerid
 
-Nüüd teoorias, sa peaksid saama ühendust andmebaasiga läbi IntelliJi
-
-### 2.3 Jargmine samm
-
-- Pane grocelyApplication Intellijsist punasest nupust kinni kui jookseb
-
-- Nüüd klikka Intellijsis sealt paremalt poolt "Database"
-
-- Vajuta Database ikoonil "+" märki seejärel vali data source -> PostgreSQL
-
-Täida väljad: 
--  Host: localhost
-- Port: 5434
-- User: postgres
-- database: postgres
-- Password: Sn1tchesG4tSt1tches
-
-
-See loob ajutise tunneli sinu arvuti ja serveri vahel portil 5434 (sinu arvutis) ja serveris 5432. Nüüd iga kord kui sa hakkad Intellijsis seda serveri andbebaasi vaatama, sa pead enne jooksutama seda commandi -> ssh -i C:\Users\krist\.ssh\gitlab_ci_deploy_key -L 5434:127.0.0.1:5432 ubuntu@193.40.157.76   ja hoidma terminal lahti. 
-
-
-- Nüüd kui testida ja klikata "test connections" peaks tulema märge, et succeeded vajuta seejärel OK
-
-- Intellijsis vali paremalt uuesti database, vajuta refreshi nuppu. Seejärel otsi ülesse postgres@localhost[2] <- minul oli see nii. Tee parem klikk ja vaata üle kas port on 5434, kui on siis korras ja oled õiges kohas. 
-
-- Klikka product ja brand tabelil, lisa manuaalselt andmed ja kindlasti submiti andmed
-
 - Ava link http://193.40.157.76 . Peaksid nägema nüüd, et andmed jõudsid kohale
+
+Nüüd teoorias, sa peaksid saama ühendust andmebaasiga läbi IntelliJi
 
 
 # 3. Kuidas runnida - *local*
