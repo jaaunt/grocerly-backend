@@ -12,12 +12,13 @@ public class ProductEntity {
 
     private String product_name;
 
-
     private String product_description;
 
     private Float price;
 
     private Integer product_quantity;
+
+    private String picture;
 
     @ManyToOne // Tähendab, et mitu produkti võib kuuluda ühele brandile
     @JoinColumn(name = "brand_id") // Andmebaasis on product tabelis väli nimega brand_id

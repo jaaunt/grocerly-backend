@@ -7,9 +7,6 @@ Tegemist on klassikalise toidu tellimus teenusega. Leht voimaldab klientidel val
 Leht on loodud aine ITI0302 raames aastal 2025 Taltechis. Tegemist pole paris tellimis lehega, turvalisuse huvides palume paris isikuandmeid lehele mitte sisestada.
 
 # 2. Kuidas runnida - *server*
-selle jaoks on eeldus et sul on serveriga tootav ssh voti voi keegi paneb sinu eest serveri runnima
-
-### 2.1 Serveri kaivitamine
 
 
 - Ava link http://193.40.157.76 . Peaksid nägema nüüd, et andmed jõudsid kohale
