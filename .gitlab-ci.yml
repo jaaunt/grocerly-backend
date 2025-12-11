@@ -20,11 +20,11 @@ build:
   cache:
     key: "$CI_COMMIT_REF_NAME"
     paths:
-      - .gradle/wrapper
-      - .gradle/caches
+      - grocerly/.gradle/wrapper
+      - grocerly/.gradle/caches
   artifacts:
     paths:
-      - build/libs/*.jar
+      - grocerly/build/libs/*.jar
     expire_in: 1 hour
 
 dockerize:
