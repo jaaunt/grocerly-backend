@@ -10,5 +10,7 @@ public class ProductResponseDto {
     private String price;
     private String productQuantity;
     private Integer brandId;
+    private String picture;
+
 
 }
