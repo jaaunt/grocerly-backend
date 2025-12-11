@@ -58,6 +58,7 @@ deploy:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
   script:
+    - echo "$SSH_PRIVATE_KEY" | head -c 50
     - ssh -o StrictHostKeyChecking=no ubuntu@193.40.157.76 "
       cd /opt/veeb &&
       docker-compose pull &&
