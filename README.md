@@ -11,7 +11,7 @@ Leht on loodud aine ITI0302 raames aastal 2025 Taltechis. Tegemist pole paris te
 
 - Ava link http://193.40.157.76 . Peaksid nägema nüüd, et andmed jõudsid kohale
 
-Nüüd teoorias, sa peaksid saama ühendust andmebaasiga läbi IntelliJi
+Nüüd teoorias, sa peaksid saama ühendust andmebaasiga läbi IntelliJi. Katsetus
 
 
 # 3. Kuidas runnida - *local*
