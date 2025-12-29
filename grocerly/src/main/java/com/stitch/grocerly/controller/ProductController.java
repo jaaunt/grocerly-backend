@@ -28,10 +28,13 @@ public class ProductController {
         return productService.getAllProduct();
     }
 
-
-
-
-
-
-
+    // Search + filter endpoint
+    @GetMapping("/products")
+    public List<ProductResponseDto> searchProducts(
+            @RequestParam(required = false) String q,
+            @RequestParam(required = false) Float minPrice,
+            @RequestParam(required = false) Float maxPrice
+    ) {
+        return productService.searchProducts(q, minPrice, maxPrice);
+    }
 }
