@@ -27,4 +27,18 @@ public class ProductService {
                 .map(productMapper::mapToDto)
                 .toList();
     }
+
+    // Search meetod + filter
+    public List<ProductResponseDto> searchProducts(String query, Float minPrice, Float maxPrice) {
+        // if empty tagasta koik tooted
+        if ((query == null || query.trim().isEmpty()) && minPrice == null && maxPrice == null) {
+            return getAllProduct();
+        }
+
+        // uus meetod price filteriga
+        return productRepository.searchProductsWithPriceFilter(query, minPrice, maxPrice)
+                .stream()
+                .map(productMapper::mapToDto)
+                .toList();
+    }
 }
