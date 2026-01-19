@@ -38,6 +38,12 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok:1.18.34'  // lombok
 	annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final" // mapstruct
+
+	// for tests
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.testcontainers:postgresql:1.17.6'
+
 }
 
 tasks.named('test') {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <include file="/db/changelog/changelog-master.xml"/>
+
+    <!-- Test kasutajad -->
+    <changeSet id="add-test-user-1" author="Janne-Lii Aun-Trepp">
+        <insert tableName="users">
+            <column name="id" valueNumeric="998"/>
+            <column name="username" value="testuser"/>
+            <column name="password" value="password123"/>
+            <column name="email" value="test@example.com"/>
+            <column name="phone" value="+372123456"/>
+            <column name="first_name" value="Test"/>
+            <column name="last_name" value="User"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="add-test-user-2" author="Janne-Lii Aun-Trepp">
+        <insert tableName="users">
+            <column name="id" valueNumeric="999"/>
+            <column name="username" value="testuser2"/>
+            <column name="password" value="password456"/>
+            <column name="email" value="test2@example.com"/>
+            <column name="phone" value="+372654321"/>
+            <column name="first_name" value="Test2"/>
+            <column name="last_name" value="User2"/>
+        </insert>
+    </changeSet>
+
+    <!-- Test orderid -->
+    <changeSet id="add-test-order-1" author="Janne-Lii Aun-Trepp">
+        <insert tableName="orders">
+            <column name="id" valueNumeric="998"/>
+            <column name="user_id" valueNumeric="998"/>
+            <column name="name" value="Test Order User"/>
+            <column name="email" value="order@example.com"/>
+            <column name="phone" value="+372111111"/>
+            <column name="address" value="Tallinn, Estonia"/>
+            <column name="order_items" value='[{"productId":1,"quantity":2}]'/>
+            <column name="total_price" valueNumeric="99.99"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
