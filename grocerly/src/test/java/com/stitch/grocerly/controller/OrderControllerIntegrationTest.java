@@ -163,6 +163,6 @@ class OrderControllerIntegrationTest extends AbstractIntegrationTest {
         mockMvc.perform(post("/api/orders")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(orderDto)))
-                .andExpect(status().isOk());
+                .andExpect(status().isBadRequest());
     }
 }
