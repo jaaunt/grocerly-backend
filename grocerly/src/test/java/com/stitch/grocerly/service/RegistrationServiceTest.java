@@ -48,7 +48,7 @@ class RegistrationServiceTest {
 
         // Test Entity
         userEntity = new Users();
-        userEntity.setId(1);  // ← Integer, mitte Long
+        userEntity.setId(1);
         userEntity.setUsername("newuser");
         userEntity.setPassword("password123");
         userEntity.setEmail("new@example.com");

@@ -20,18 +20,18 @@ import static org.mockito.BDDMockito.then;
 @ExtendWith(MockitoExtension.class)
 class BrandServiceTest {
 
-    @Mock  // Loob VÕLTS BrandRepository
+    @Mock  // loob volts BrandRepository
     private BrandRepository brandRepository;
 
-    @Mock  // Loob VÕLTS BrandMapper
+    @Mock  // loob volts BrandMapper
     private BrandMapper brandMapper;
 
-    @InjectMocks  // Loob PÄRIS BrandService
+    @InjectMocks  // loob paris BrandService
     private BrandService brandService;
 
     @Test
     void getBrand() {
-        // Testib getBrand(Integer id) meetodit - tagastab ühe brändi ID järgi
+        // testib getBrand(Integer id) meetodit - tagastab ühe brändi ID järgi
 
         // given
         Integer brandId = 1;
@@ -65,7 +65,7 @@ class BrandServiceTest {
 
     @Test
     void getAllBrand() {
-        // Testib getAllBrand() meetodit - tagastab kõik brändid listina
+        // testib getAllBrand() meetodit - tagastab kõik brändid listina
 
         // given
         BrandEntity brand1 = new BrandEntity();
