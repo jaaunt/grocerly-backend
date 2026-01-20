@@ -40,7 +40,7 @@
             <column name="email" value="order@example.com"/>
             <column name="phone" value="+372111111"/>
             <column name="address" value="Tallinn, Estonia"/>
-            <column name="order_items" value='[{"productId":1,"quantity":2}]'/>
+            <column name="order_items" value="Kunafa pistaatsiakreemiga shokolaad x 4, Vanini sokolaadide valik x 3"/>
             <column name="total_price" valueNumeric="99.99"/>
         </insert>
     </changeSet>

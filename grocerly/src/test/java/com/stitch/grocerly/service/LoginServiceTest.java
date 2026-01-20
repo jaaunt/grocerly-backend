@@ -39,22 +39,22 @@ class LoginServiceTest {
 
     @BeforeEach
     void setUp() {
-        // Loome test kasutaja (entity)
+        // loome test kasutaja (entity)
         testUser = new Users();
-        testUser.setId(1);  // ← MUUDETUD: Integer, mitte Long
+        testUser.setId(1);
         testUser.setUsername("testuser");
         testUser.setPassword("password123");
         testUser.setEmail("test@example.com");
         testUser.setPhone("+372123456");
 
-        // Loome test kasutaja DTO
+        // loome test kasutaja DTO
         testUserDto = new UsersDto();
-        testUserDto.setId(1);  // ← MUUDETUD: Integer, mitte Long
+        testUserDto.setId(1);
         testUserDto.setUsername("testuser");
         testUserDto.setEmail("test@example.com");
         testUserDto.setPhone("+372123456");
 
-        // Loome login request
+        // loome login request
         loginRequest = new LoginRequestDto();
         loginRequest.setUsername("testuser");
         loginRequest.setPassword("password123");
@@ -78,7 +78,6 @@ class LoginServiceTest {
         // ========== ASSERT ==========
         assertNotNull(result, "Tulemus ei tohi olla null");
 
-        // ← MUUDETUD: Kasutame Integer.valueOf() et vältida ambiguous call'i
         assertEquals(Integer.valueOf(1), result.getId(), "Kasutaja ID peaks olema 1");
         assertEquals("testuser", result.getUsername(), "Username peaks olema 'testuser'");
         assertEquals("test@example.com", result.getEmail(), "Email peaks olema õige");

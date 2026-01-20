@@ -82,7 +82,7 @@ class OrderServiceTest {
     @Test
     void createOrder_Success() {
         // ========== ARRANGE ==========
-        // OrderDto ilma ID'ta teisendatakse Entity'ks (samuti ilma ID'ta)
+        // orderDto ilma ID'ta teisendatakse Entity'ks (samuti ilma ID'ta)
         OrderEntity entityBeforeSave = new OrderEntity();
         entityBeforeSave.setUserId(100L);
         entityBeforeSave.setName("John Doe");
