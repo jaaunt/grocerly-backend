@@ -15,12 +15,14 @@ public class BrandController {
 
     @GetMapping("brands/{id}")
     public BrandResponseDto getBrand(@PathVariable Integer id){
+        // peab leidma konkreetse brändi ID järgi
         return brandService.getBrand(id);
 
     }
 
     @GetMapping("/brands")
     public List<BrandResponseDto> getAllBrands() {
+        // tagastama kõik brändid
         return brandService.getAllBrand();
     }
 }

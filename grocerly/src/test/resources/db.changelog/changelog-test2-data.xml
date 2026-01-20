@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <include file="/db/changelog/changelog-master.xml"/>
+
+    <!-- Test kasutaja UsersControlleri testimiseks -->
+    <changeSet id="add-test-user-for-users-controller" author="Kristin">
+        <insert tableName="users">
+            <!-- id 1001 - kasutame GET /users/{id} endpointi testimiseks -->
+            <column name="id" valueNumeric="1001"/>
+            <column name="username" value="kristin_test"/>
+            <column name="password" value="testpass123"/>
+            <column name="email" value="kristin@test.com"/>
+            <column name="phone" value="+372555111"/>
+            <column name="first_name" value="Kristin"/>
+            <column name="last_name" value="Testija"/>
+        </insert>
+    </changeSet>
+
+    <!-- Teine test kasutaja update testimiseks -->
+    <changeSet id="add-second-test-user" author="Kristin">
+        <insert tableName="users">
+            <!-- id 1002 - kasutame PUT /users/{id} endpointi testimiseks -->
+            <column name="id" valueNumeric="1002"/>
+            <column name="username" value="update_user"/>
+            <column name="password" value="oldpass456"/>
+            <column name="email" value="update@test.com"/>
+            <column name="phone" value="+372555222"/>
+            <column name="first_name" value="Update"/>
+            <column name="last_name" value="Tester"/>
+        </insert>
+    </changeSet>
+
+    <!-- Test brand (kuna product vajab brand_id) -->
+    <changeSet id="add-test-brand-for-product-integration-test" author="Kristin">
+        <insert tableName="brand">
+            <column name="id" valueNumeric="2001"/>
+            <column name="brand_name" value="TestBrand"/>
+            <column name="brand_description" value="Test brand for integration testing"/>
+        </insert>
+    </changeSet>
+
+    <!-- Test product #1 - GET /api/products/{id} testi jaoks -->
+    <changeSet id="search-test-product-1-for-integration-test" author="Kristin">
+        <insert tableName="product">
+            <column name="id" valueNumeric="3001"/>
+            <column name="product_name" value="Test Laptop"/>
+            <column name="product_description" value="High performance laptop for testing"/>
+            <column name="price" valueNumeric="999.99"/>
+            <column name="product_quantity" valueNumeric="50"/>
+            <column name="brand_id" valueNumeric="2001"/>
+            <column name="picture" value="laptop.jpg"/>
+        </insert>
+    </changeSet>
+
+    <!-- Test product #2 - Search testi jaoks (odav toode) -->
+    <changeSet id="search-test-product-2-for-integration-test" author="Kristin">
+        <insert tableName="product">
+            <column name="id" valueNumeric="3002"/>
+            <column name="product_name" value="Test Mouse"/>
+            <column name="product_description" value="Wireless mouse for testing"/>
+            <column name="price" valueNumeric="29.99"/>
+            <column name="product_quantity" valueNumeric="100"/>
+            <column name="brand_id" valueNumeric="2001"/>
+            <column name="picture" value="mouse.jpg"/>
+        </insert>
+    </changeSet>
+
+    <!-- Test product #3 - Search testi jaoks (keskmine hind) -->
+    <changeSet id="search-test-product-3-for-integration-test" author="Kristin">
+        <insert tableName="product">
+            <column name="id" valueNumeric="3003"/>
+            <column name="product_name" value="Test Keyboard"/>
+            <column name="product_description" value="Mechanical keyboard for testing"/>
+            <column name="price" valueNumeric="149.99"/>
+            <column name="product_quantity" valueNumeric="75"/>
+            <column name="brand_id" valueNumeric="2001"/>
+            <column name="picture" value="keyboard.jpg"/>
+        </insert>
+    </changeSet>
+
+    <!-- BrandController integratsioonitestide andmed -->
+    <changeSet id="test-brands-for-brand-controller" author="Kristin">
+
+        <insert tableName="brand">
+            <column name="id" valueNumeric="1"/>
+            <column name="brand_name" value="Kalev"/>
+        </insert>
+
+        <insert tableName="brand">
+            <column name="id" valueNumeric="2"/>
+            <column name="brand_name" value="Vanini"/>
+        </insert>
+
+        <insert tableName="brand">
+            <column name="id" valueNumeric="3"/>
+            <column name="brand_name" value="Look me"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

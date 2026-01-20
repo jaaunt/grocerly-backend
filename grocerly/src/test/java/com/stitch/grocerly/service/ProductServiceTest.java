@@ -78,10 +78,7 @@ class ProductServiceTest {
         assertEquals(expectedDto.getProductQuantity(), result.getProductQuantity());
     }
 
-    @Test
-    void getAllProduct() {
 
-    }
 
     @Test
     void searchProducts() {
