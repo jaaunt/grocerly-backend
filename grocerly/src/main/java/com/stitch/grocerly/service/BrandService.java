@@ -11,7 +11,8 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class BrandService {
+public class
+BrandService {
     private final BrandRepository brandRepository;
 
     private final BrandMapper brandMapper;

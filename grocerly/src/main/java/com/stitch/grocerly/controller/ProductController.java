@@ -23,10 +23,6 @@ public class ProductController {
 
     }
 
-    @GetMapping("/all-products")
-    public List<ProductResponseDto> getAllProducts() {
-        return productService.getAllProduct();
-    }
 
     // Search + filter endpoint
     @GetMapping("/products")
