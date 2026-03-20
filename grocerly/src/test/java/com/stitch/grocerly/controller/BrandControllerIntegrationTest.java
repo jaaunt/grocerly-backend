@@ -26,7 +26,7 @@ class BrandControllerIntegrationTest extends AbstractIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    // ========== GET /api/brands/{id} TESTID ==========
+    // ========== GET /api/brands/{id} TESTID ===========
 
     @Test
     @Transactional
