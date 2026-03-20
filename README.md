@@ -11,15 +11,13 @@ The website allows customers to browse products, add them to a cart and place or
 
 This is not a real ordering service. Please do not enter any real personal information.
 
-The project was originally developed on GitLab and was previously deployed on a university server. The original GitLab repositories can be found here:
-- Backend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend](https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend)
-- Frontend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend](https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend)
+The project was originally developed on GitLab and was previously deployed on a university server.
 
 ## How to run locally
 
 Clone both repos and run the backend first, then the frontend.
--[Backend](https://github.com/jaaunt/grocerly-backend)
--[Frontend](https://github.com/jaaunt/grocerly-frontend)
+- [Backend](https://github.com/jaaunt/grocerly-backend)
+- [Frontend](https://github.com/jaaunt/grocerly-frontend)
 
 ### Backend
 
