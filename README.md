@@ -7,12 +7,12 @@ You can find the original Estonian README [here](https://github.com/jaaunt/groce
 
 ## Project description
 
-Grocerly is a grocery ordering web application developed as a group project for the ITI0302 course at TalTech in 2025. It allows customers to browse products, add them to a cart and place orders for home delivery inpired by Barbora. 
+The website allows customers to browse products, add them to a cart and place orders for home delivery. Inpired by Barbora. 
 
 This is not a real ordering service. Please do not enter any real personal information.
 
 The project was originally developed on GitLab and was previously deployed on a university server. The original GitLab repositories can be found here:
-- Backend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend](https://github.com/jaaunt/grocerly-backend)
+- Backend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend](https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend)
 - Frontend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend](https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend)
 
 ## How to run locally
