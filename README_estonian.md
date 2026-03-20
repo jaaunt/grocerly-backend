@@ -69,7 +69,7 @@ Runni grocerly applicationi selle leiad siit alt -> iti0302-2025-backend -> groc
 
 ### 3.2.4 Browser
 
-- Ava oma lemmik browseris jargi oma sudant mis on oige valik: http://localhost:5173/
+- Ava ukskoik millises browseris: http://localhost:5173/
 
 Eks nad koik vast tootavad.
 
