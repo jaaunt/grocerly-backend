@@ -1,102 +1,108 @@
-# ITI0302-2025-backend
+# Grocerly
 
-# 1. Projekti kirjeldus / eesmark
+## About this repository
+This project was originally developed on GitLab for the ITI0302 course at TalTech. The original version was deployed on a university server, however the server is not currently available(as of 20.03.2026) we will update the README once it becomes available, but you are welcome to check for yourself by clicking the link http://193.40.157.76 . The project was made as a group project by Janne-Lii Aun-Trepp ([jaaunt](https://github.com/jaaunt)) and Kristin Vares ([kristinvares](https://github.com/kristinvares)).
 
-Tegemist on klassikalise toidu tellimus teenusega. Leht voimaldab klientidel valida tooteid ja lisada neid oma ostukorvi et siis neid koju tellida. Tegemist pole valmis soogi tellimis lehega vaid poest toodete tellimisega.(nagu barbora)
+You can find the original Estonian README [here](https://github.com/jaaunt/grocerly-backend/blob/main/README_estonian.md).
 
-Leht on loodud aine ITI0302 raames aastal 2025 Taltechis. Tegemist pole paris tellimis lehega, turvalisuse huvides palume paris isikuandmeid lehele mitte sisestada.
+## Project description
 
-# 2. Kuidas runnida - *server*
+Grocerly is a grocery ordering web application developed as a group project for the ITI0302 course at TalTech in 2025. It allows customers to browse products, add them to a cart and place orders for home delivery inpired by Barbora. 
 
+This is not a real ordering service. Please do not enter any real personal information.
 
-- Ava link http://193.40.157.76 . Peaksid nägema nüüd, et andmed jõudsid kohale
+The project was originally developed on GitLab and was previously deployed on a university server. The original GitLab repositories can be found here:
+- Backend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend](https://github.com/jaaunt/grocerly-backend)
+- Frontend: [gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend](https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend)
 
-Nüüd teoorias, sa peaksid saama ühendust andmebaasiga läbi IntelliJi. Katsetus
+## How to run locally
 
+Clone both repos and run the backend first, then the frontend.
+-[Backend](https://github.com/jaaunt/grocerly-backend)
+-[Frontend](https://github.com/jaaunt/grocerly-frontend)
 
-# 3. Kuidas runnida - *local*
+### Backend
 
-Koigepealt runni back siis front nagu ikka. Alusta kloonimisest.
+#### 1. Start Docker
+- Open Docker Desktop on your machine
+- Run the following in your IDE terminal:
+```bash
+docker-compose up -d
+```
+- To connect to the database, open the Database view in your IDE (the cylinder icon on the right), click the + button and select PostgreSQL. The username and password can be found in `docker-compose.yml`
+- To stop Docker run:
+```bash
+docker-compose down
+```
 
-- backend: https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-backend
-- frontend: https://gitlab.cs.taltech.ee/jaaunt/iti0302-2025-frontend
+#### 2. Build the project
+Open the Gradle panel on the right (elephant icon) and run:
+`grocerly → Tasks → build → build`
 
-### 3.0 Klooni molemad repod
+#### 3. Run the application
+Run the main application file found at:
+`grocerly → src → main → java → com.stitch.grocerly → GrocerlyApplication.java`
 
-Kui see pakub sulle backendi juures load gradle script parast kloonimist tee seda
+#### 4. Build a JAR file (optional)
+`grocerly → Tasks → build → bootJar`
 
-## 3.1 Backend osa:
+---
 
-### 3.1.1 Runni dokkerit
+### Frontend
 
-1. Tee lahti oma arvutis dokker desktop
+#### 1. Navigate to the frontend folder
+```bash
+cd path/to/iti0302-2025-frontend/grocerly
+```
 
-2. Tee oma IDE TERMINALIS docker-compose up -d
+#### 2. Install dependencies
+```bash
+npm install axios
+npm install pinia
+npm install
+```
 
-3. Andmebaasiga uhendamiseks kui sa varem pole on vaja votta paremalt datavase vaatest(kolme kihiline silindri nupp) pluss. Vali sealt alt postgrSQL seal on sul vaja userit ja passwordi need leiad sa docker-compose.yml failist.
+#### 3. Run
+```bash
+npm run dev
+```
 
-Dockeri saab kinni panna kasuga IDE TERMINALIS docker compose down
+#### 4. Open in browser
+```
+http://localhost:5173/
+```
 
-### 3.1.2 Buildimine
+#### Note
+On first run the product list will be empty since the local database has no content. Products and brands must be added manually through the backend. Users can be created through the registration view. Orders can be placed through the cart view.
 
-Nuud peaks projekti gradleis igaksjuhuks ule buildima. Gradel nupp aseub paremal(elevant). Siis gradle menust grocerly -> Tasks -> build -> build.
+## Technologies
 
-### 3.1.3 Runni applicationit
+| Technology | Purpose |
+|---|---|
+| Spring Boot | Backend REST API |
+| Vue.js | Frontend framework |
+| PostgreSQL | Database |
+| Docker | Containerized database setup |
+| Gradle | Build automation |
 
-Runni grocerly applicationi selle leiad siit alt -> iti0302-2025-backend -> grocerly -> src -> main -> java -> com.stitch.grocerly -> GrocerlyApplication.java runni kas seda faili voi funktsiooni selle faili sees.
-
-## 3.2 Frontend osa:
-
-### 3.2.1 Path
-
-- Koigepealt vota grocerly path selles projektis. Mul oli see nt C:\Users\abc\IdeaProjects\iti0302-2025-frontend\grocerly sul peaks olema midagi sarnast.
-
-- Pane see path intellij terminali nii: cd sinu_path
-
-- mul oli see naiteks nii: cd C:\Users\abc\IdeaProjects\iti0302-2025-frontend\grocerly
-
-### 3.2.2 Installid
-
-1. Pane terminali nuud: npm install axios
-
-2. Pane terminali nuud: npm install pinia
-
-3. Pane terminali nuud: npm install
-
-### 3.2.3 Runni
-
-- Pane terminali nuud: npm run dev
-
-### 3.2.4 Browser
-
-- Ava oma lemmik browseris jargi oma sudant mis on oige valik: http://localhost:5173/
-
-Eks nad koik vast tootavad.
-
-### 3.2.5 Additional notes
-
-Arvatavasti markad et esilehel pole uhtegi toodet hetkel see on selleparast et localis tehes pole andmebaasis sisu.
-
-Seega on all users, orders, brands ja product tabelid tuhjad. Producte ja brande peab lisama intellij backendist andmebaasi ise juurde lisama. Usereid saad juurde lisada registreerimis viewst. See lisab userid ise andmebaasi. Ordereid saab samamoodi ise teha ostukorvi vaatest.
-
-# 4. Kui sa tahad omale buildida selle backendi jar faili
-
-Seda saab teha gradle aknast grocerly -> tasks -> build -> bootJar
-
-# 5. Tehnoloogiad
-
-- Spring boot
-- Vue
-- PostgreSQL
-
-# 6. Prerequisites
+## Prerequisites
 
 - Java 21
 - Node.js 18+ and npm
 - PostgreSQL 16
-- Docker Desktop (optional, for containerized setup)
+- Docker Desktop
 - Git
 
-# 7. Autorid
+## Features
 
-Janne-Lii Aun-Trepp ja Kristin Vares
+| Feature | Description |
+|---|---|
+| Product browsing | Browse and search products by name and price |
+| Shopping cart | Add products and place orders |
+| User accounts | Register and log in |
+| REST API | Full backend API with Spring Boot |
+| Integration tests | Testcontainers-based integration tests |
+
+## Authors
+
+Janne-Lii Aun-Trepp and Kristin Vares
