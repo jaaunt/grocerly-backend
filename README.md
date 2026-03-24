@@ -1,5 +1,6 @@
 # Grocerly
 
+
 ## About this repository
 This project was originally developed on GitLab for the ITI0302(2025) course at TalTech. The original version was deployed on a university server, however the server is not currently available(as of 20.03.2026) we will update the README once it becomes available, but you are welcome to check for yourself by clicking the link http://193.40.157.76 . The project was made as a group project by Janne-Lii Aun-Trepp ([jaaunt](https://github.com/jaaunt)) and Kristin Vares ([kristinvares](https://github.com/kristinvares)).
 
