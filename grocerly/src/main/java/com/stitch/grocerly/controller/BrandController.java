@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-// Genereerib konstruktori kõikidele nendele kus on final ees
+// Genereerib konstruktori kõikidele kus on final ees
 @RequiredArgsConstructor
 public class BrandController {
     private final BrandService brandService;
@@ -17,7 +17,6 @@ public class BrandController {
     public BrandResponseDto getBrand(@PathVariable Integer id){
         // peab leidma konkreetse brändi ID järgi
         return brandService.getBrand(id);
-
     }
 
     @GetMapping("/brands")
