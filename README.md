@@ -4,7 +4,7 @@
 ## About this repository
 This project was originally developed on GitLab for the ITI0302(2025) course at TalTech. The original version was deployed on a university server, however unfortunately that is not currently possible. The project can still be run on localhost. The project was made as a group project by Janne-Lii Aun-Trepp ([jaaunt](https://github.com/jaaunt)) and Kristin Vares ([kristinvares](https://github.com/kristinvares)).
 
-You can find the original Estonian README [here](https://github.com/jaaunt/grocerly-backend/blob/main/README_estonian.md).
+You can find the original Estonian README [here](https://github.com/jaaunt/grocerly-backend/blob/main/README_estonian.md). (mildly outdated)
 
 ## Project description
 
